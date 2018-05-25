@@ -8,6 +8,12 @@ namespace CodePractice
         {
             NormalMember mem1 = new NormalMember("Special Rate", "James", 1, 2010);
             VIPMember mem2 = new VIPMember("Andy", 2, 2011);
+
+            mem1.CalculateAnnualFee();
+            mem2.CalculateAnnualFee();
+
+            Console.WriteLine(mem1.ToString());
+            Console.WriteLine(mem2.ToString());
         }
 
         protected int annualFee; // 4 Fields
@@ -17,7 +23,7 @@ namespace CodePractice
 
         public override string ToString() // String override
         {
-            return "\nName:" + name + "\nMember ID:" + memberID + "\nMember Since:" + memberSince + "\nTotal Annual Fee:" + annualFee;
+            return "\nName: " + name + "\nMember ID: " + memberID + "\nMember Since: " + memberSince + "\nTotal Annual Fee: " + annualFee;
         }
 
         public Member() // Base Constructor 1
