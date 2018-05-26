@@ -9,7 +9,7 @@ namespace CodePractice
             Console.WriteLine("Message = {0}", remarks);
         }
 
-        public void CalculateAnnualFee() // child class inherits protected field annualFee from parent/base class
+        public override void CalculateAnnualFee() // child class inherits protected field annualFee from parent/base class
         {
             annualFee = 100 + 12 * 30;
         }
