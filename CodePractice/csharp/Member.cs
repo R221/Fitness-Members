@@ -6,20 +6,37 @@ namespace CodePractice
     {
         static void Main() // Main Method is the entry point for all apps and is the first method run
         {
-            NormalMember mem1 = new NormalMember("Special Rate", "James", 1, 2010);
-            VIPMember mem2 = new VIPMember("Andy", 2, 2011);
+            Member[] clubMembers = new Member[5];
 
-            mem1.CalculateAnnualFee();
-            mem2.CalculateAnnualFee();
+            clubMembers[0] = new NormalMember("Special Rate", "James", 1, 2010);
+            clubMembers[1] = new NormalMember("Normal Rate", "Andy", 2, 2011);
+            clubMembers[2] = new NormalMember("Normal Rate", "Bill", 3, 2011);
+            clubMembers[3] = new VIPMember("Carol", 4, 2012);
+            clubMembers[4] = new VIPMember("Evelyn", 5, 2012);
 
-            Console.WriteLine(mem1.ToString());
-            Console.WriteLine(mem2.ToString());
+            foreach (Member m in clubMembers)
+            {
+                m.CalculateAnnualFee();
+                Console.WriteLine(m.ToString());
+            }
+
+            if (clubMembers[0].GetType() == typeof(VIPMember))
+                Console.WriteLine("Yes");
+            else
+            {
+                Console.WriteLine("No");
+            }
         }
 
         protected int annualFee; // 4 Fields
         private string name;
         private int memberID;
         private int memberSince;
+
+        public virtual void CalculateAnnualFee()
+        {
+            annualFee = 0;
+        }
 
         public override string ToString() // String override
         {

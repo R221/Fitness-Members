@@ -8,7 +8,7 @@ namespace CodePractice
             Console.WriteLine("Child Constructor with 3 parameters");
         }
 
-        public void CalculateAnnualFee() // method
+        public override void CalculateAnnualFee() // method
         {
             annualFee = 1200;
         }
